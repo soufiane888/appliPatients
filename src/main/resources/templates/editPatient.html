@@ -10,7 +10,12 @@ layout:decorate="template1.html">
 <body>
 <div layout:fragment="content1">
     <div class="col-md-6 offset-3">
-<form class="form-group" method="post" th:action="@{save}">
+<form class="form-group" method="post" th:action="@{save(page=${page}, keyword=${keyword})}">
+    <div >
+        <labe>ID :</labe>
+        <labe th:text="${patient.id}"></labe>
+        <input class="form-control" type="hidden" name="id" th:value="${patient.id}">
+    </div>
     <div >
         <labe>Nom</labe>
         <input class="form-control" type="text" name="nom" th:value="${patient.nom}">
@@ -18,7 +23,7 @@ layout:decorate="template1.html">
     </div>
     <div >
         <labe>Date de naissance</labe>
-        <input class="form-control" type="date" name="dateNaissance" th:value="${patient.dateNaissance}">
+        <input class="form-control" type="date" name="dateNaissande" th:value="${patient.dateNaissance}">
         <span class="text-danger" th:errors="${patient.dateNaissance}"></span>
     </div>
     <div >
