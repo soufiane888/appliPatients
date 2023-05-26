@@ -31,7 +31,8 @@
                        Patients
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" th:href="@{/formPatients}">Nouveau</a></li>
+                        <li sec:authorize="hasRole('ADMIN')"><a class="dropdown-item" th:href="@{/formPatients}">Nouveau</a></li>
+
                         <li><a class="dropdown-item" th:href="@{/index}">Chercher</a></li>
                     </ul>
                 </li>
